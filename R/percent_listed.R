@@ -9,6 +9,13 @@
 #' @return A data frame of sampled sites with the calculated percent listed MCAT
 #'         metric
 #'
+#' @examples
+#' # Create the individual mussel data frame
+#' individuals <- mcat::individuals
+#'
+#' # Calculate percent listed for the individuals data frame
+#' pl <- percent_listed(individuals)
+#'
 #' @importFrom dplyr group_by summarize
 #'
 percent_listed <- function(individuals) {
