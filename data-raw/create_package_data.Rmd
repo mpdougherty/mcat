@@ -1,0 +1,19 @@
+---
+title: "Create Test Data"
+output: html_document
+---
+
+# Study Area
+Data for the tests were taken from the Lower Pool 10 HREP. `\\mvrdfs\egis\Work\EMP\HREP_Projects\Lower_Pool10\MusselModel\Data`
+
+# Test data
+`mcat/data-raw/lp10_all_individuals.csv`
+
+Convert the .csv file into a data frame
+```{r}
+individuals <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/lp10_all_individuals.csv", 
+                        stringsAsFactors = FALSE)
+```
+
+
+
