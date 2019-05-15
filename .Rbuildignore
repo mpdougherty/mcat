@@ -1,0 +1,4 @@
+^data-raw$
+^create_package_steps\.R$
+^.*\.Rproj$
+^\.Rproj\.user$
