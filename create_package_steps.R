@@ -54,7 +54,7 @@ usethis::use_data_raw()
 
 # Add the sin_flowline_points sp object to the package
 usethis::use_data(individuals, overwrite = TRUE)
-
+usethis::use_data(listed, overwrite = TRUE)
 
 
 ## Organize
