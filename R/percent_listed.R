@@ -22,20 +22,25 @@ percent_listed <- function(individuals) {
   # Get vector of listed species
   listed <- mcat::listed$listed
 
-  # Set a flag field if the individual is listed
-  individuals$listed_0 <- ifelse(individuals$Ename %in% listed, 1, 0)
+  # Set a flag field if the individual is listed and alive
+  individuals$listed <- ifelse(individuals$Ename %in% listed &
+                               individuals$NumberLive >= 1,
+                               1, 0)
 
   # Group by SampleID
   individuals %>%
     dplyr::group_by(SampleID) %>%
     dplyr::summarize(SUM_NumberLive = sum(NumberLive),
-                     SUM_Listed = sum(listed_0)) -> sample
+                     SUM_Listed = sum(listed)) -> sample
 
   # Calculate percent listed
   sample$percent_listed <- (sample$SUM_Listed / sample$SUM_NumberLive) * 100
 
-  # Convert NaN to zero
+  # Convert NaN to zero (numerator and denominator is zero)
   sample$percent_listed[is.nan(sample$percent_listed)] <- 0
+
+  # Convert Inf to zero (demominator is zero)
+  sample$percent_listed[is.infinite(sample$percent_listed)] <- 0
 
   return(sample)
 }

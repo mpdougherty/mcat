@@ -4,6 +4,11 @@ output: html_document
 bibliography: ../mcat.bib
 ---
 
+```{r}
+library(usethis)
+```
+
+
 # Study Area
 Data for the tests were taken from the Lower Pool 10 HREP. `\\mvrdfs\egis\Work\EMP\HREP_Projects\Lower_Pool10\MusselModel\Data`
 
@@ -36,10 +41,19 @@ Import the required MCAT tables
 ```{r}
 listed <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/listed.csv", 
                    stringsAsFactors = FALSE)
+tolerant <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/tolerant.csv", 
+                     stringsAsFactors = FALSE)
+lampsilini <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/lampsilini.csv", 
+                     stringsAsFactors = FALSE)
+tribe <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/tribe.csv", 
+                     stringsAsFactors = FALSE)
 ```
 
 Make this data available to the package. 
 ```{r eval=FALSE}
 usethis::use_data(listed, overwrite = TRUE)
+usethis::use_data(tolerant, overwrite = TRUE)
+usethis::use_data(lampsilini, overwrite = TRUE)
+usethis::use_data(tribe, overwrite = TRUE)
 ```
 
