@@ -13,10 +13,6 @@ This package implements the Mussel Community Assessment Tool (MCAT)
         of Engineers, Rock Island District.
 }
 \details{
-This package implements the Mussel Community Assessment Tool (MCAT)
-    metrics in Heidi Dunn, Steve Zigler, and Teresa Newton. 2016.
-    “Validation of a Mussel Community Assessment Tool for the Upper
-    Mississippi River System.” 2014 MCA2. Rock Island, IL: U.S. Army Corps
-    of Engineers, Rock Island District.
+Place some more package details here.
 }
 \keyword{internal}

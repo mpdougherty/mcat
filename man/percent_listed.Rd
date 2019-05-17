@@ -17,3 +17,11 @@ A data frame of sampled sites with the calculated percent listed MCAT
 Calculates the percent listed MCAT metric for the input
 individual mussel data frame.
 }
+\examples{
+# Create the individual mussel data frame
+individuals <- mcat::individuals
+
+# Calculate percent listed for the individuals data frame
+pl <- percent_listed(individuals)
+
+}
