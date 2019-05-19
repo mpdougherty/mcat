@@ -2,7 +2,7 @@ Package: mcat
 Type: Package
 Title: Mussel Community Assessment Tool
 Version: 0.1.0
-Author@R: c(
+Author: c(
     person("Michael", "Dougherty", 
            email = "Michael.P.Dougherty@usace.army.mil", 
            role = c("aut", "cre")),
@@ -10,10 +10,11 @@ Author@R: c(
            email = "Davi.E.Michl@usace.army.mil",
            role = c("ctb"))
     )
+Maintainer: Michael Dougherty <Michael.P.Dougherty@usace.army.mil>
 Description: This package implements the Mussel Community Assessment Tool (MCAT)
         metrics in Heidi Dunn, Steve Zigler, and Teresa Newton. 2016. 
-        “Validation of a Mussel Community Assessment Tool for the Upper 
-        Mississippi River System.” 2014 MCA2. Rock Island, IL: U.S. Army Corps 
+        Validation of a Mussel Community Assessment Tool for the Upper 
+        Mississippi River System. 2014 MCA2. Rock Island, IL: U.S. Army Corps 
         of Engineers, Rock Island District.
 License: GPL-3
 Depends: R (>= 2.10)
