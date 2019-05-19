@@ -1,4 +1,3 @@
-library(mcat)
 context("percent_listed")
 
 # Create the individual mussel data frame

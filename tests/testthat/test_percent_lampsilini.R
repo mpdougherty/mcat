@@ -1,4 +1,3 @@
-library(mcat)
 context("percent_lampsilini")
 
 # Create the individual mussel data frame

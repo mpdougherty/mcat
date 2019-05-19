@@ -14,12 +14,12 @@
 #' individuals <- mcat::individuals
 #'
 #' # Calculate percent over 15 years for the individuals data frame
-#' pj <- percent_over_15yrs(individuals)
+#' po <- percent_over_15yrs(individuals)
 #'
 #' @importFrom dplyr group_by summarize
 #'
 percent_over_15yrs <- function(individuals) {
-  # Set a flag field if the individual is juvenile and alive
+  # Set a flag field if the individual is over 15 years and alive
   individuals$over_15yrs <- ifelse(individuals$Age >= 15 &
                                     individuals$NumberLive >= 1,
                                    1, 0)

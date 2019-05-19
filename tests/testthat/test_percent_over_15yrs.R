@@ -1,10 +1,9 @@
-library(mcat)
 context("percent_over_15yrs")
 
 # Create the individual mussel data frame
 individuals <- mcat::individuals
 
-# Calculate percent tolerant for the individuals data frame
+# Calculate percent over 15 years for the individuals data frame
 po <- percent_over_15yrs(individuals)
 
 test_that("Check percent over_15yrs for site 201009211401 = 100", {
