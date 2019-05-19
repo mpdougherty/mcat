@@ -16,13 +16,11 @@ usethis::use_build_ignore("create_package_steps.R")
 
 # Use packages needed by functions, vignettes, etc.
 usethis::use_package("vegan", "Imports")
-usethis::use_package("arcgisbinding", "Imports")
 usethis::use_package("dplyr", "Imports")
 usethis::use_package("assertthat", "Imports")
 usethis::use_package("ggplot2", "Imports")
 usethis::use_package("reshape2", "Imports")
 usethis::use_package("ggrepel", "Imports")
-usethis::use_package("kableExtra", "Imports")
 
 ## Write Code
 # Periodically lint the code

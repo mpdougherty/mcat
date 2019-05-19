@@ -42,5 +42,3 @@ test_that("Check when SUM_NumberLive = 0, percent_juveniles = 0", {
 test_that("Check percent juveniles not greater than 100", {
   expect_lte(max(pj$percent_juveniles), 100.0)
 })
-
-201009221448
