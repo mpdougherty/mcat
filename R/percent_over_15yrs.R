@@ -19,9 +19,12 @@
 #' @importFrom dplyr group_by summarize
 #'
 percent_over_15yrs <- function(individuals) {
+  # Create the `number_live` field
+  individuals$number_live <- ifelse(individuals$Status == "Live", 1, 0)
+
   # Set a flag field if the individual is over 15 years and alive
   individuals$over_15yrs <- ifelse(individuals$Age >= 15 &
-                                    individuals$NumberLive >= 1,
+                                    individuals$number_live >= 1,
                                    1, 0)
 
   # Check if Age is NA, set over 15 years to zero
@@ -30,11 +33,11 @@ percent_over_15yrs <- function(individuals) {
   # Group by SampleID
   individuals %>%
     dplyr::group_by(SampleID) %>%
-    dplyr::summarize(SUM_NumberLive = sum(NumberLive),
-                     SUM_Over_15yrs = sum(over_15yrs)) -> sample
+    dplyr::summarize(SUM_number_live = sum(number_live),
+                     SUM_over_15yrs = sum(over_15yrs)) -> sample
 
   # Calculate percent over 15 years
-  sample$percent_over_15yrs <- (sample$SUM_Over_15yrs / sample$SUM_NumberLive) * 100
+  sample$percent_over_15yrs <- (sample$SUM_over_15yrs / sample$SUM_number_live) * 100
 
   # Convert NaN to zero (numerator and denominator is zero)
   sample$percent_over_15yrs[is.nan(sample$percent_over_15yrs)] <- 0

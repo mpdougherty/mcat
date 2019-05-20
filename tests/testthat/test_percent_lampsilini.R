@@ -21,14 +21,14 @@ test_that("Check percent lampsilini for site 201009211401 = 0", {
   expect_equal(plm_201009211401$percent_lampsilini, 0.0, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive and SUM_Lampsilini = 0, percent_lampsilini = 0", {
-  plm_0_0 <- plm[plm$SUM_NumberLive == 0 & plm$SUM_Lampsilini == 0, ]
+test_that("Check when SUM_number_live and SUM_lampsilini = 0, percent_lampsilini = 0", {
+  plm_0_0 <- plm[plm$SUM_number_live == 0 & plm$SUM_lampsilini == 0, ]
   zero_vector <- rep(0, times = length(plm_0_0$percent_lampsilini))
   expect_equal(plm_0_0$percent_lampsilini, zero_vector, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive = 0, percent_lampsilini = 0", {
-  plm_0 <- plm[plm$SUM_NumberLive == 0, ]
+test_that("Check when SUM_number_live = 0, percent_lampsilini = 0", {
+  plm_0 <- plm[plm$SUM_number_live == 0, ]
   zero_vector <- rep(0, times = length(plm_0$percent_lampsilini))
   expect_equal(plm_0$percent_lampsilini, zero_vector, tolerance = 1e-2)
 })

@@ -22,19 +22,22 @@ percent_tolerant <- function(individuals) {
   # Get vector of tolerant species
   tolerant <- mcat::tolerant$tolerant
 
+  # Create the `number_live` field
+  individuals$number_live <- ifelse(individuals$Status == "Live", 1, 0)
+
   # Set a flag field if the individual is tolerant and alive
   individuals$tolerant <- ifelse(individuals$Ename %in% tolerant &
-                                 individuals$NumberLive >= 1,
+                                 individuals$number_live >= 1,
                                  1, 0)
 
   # Group by SampleID
   individuals %>%
     dplyr::group_by(SampleID) %>%
-    dplyr::summarize(SUM_NumberLive = sum(NumberLive),
-                     SUM_Tolerant = sum(tolerant)) -> sample
+    dplyr::summarize(SUM_number_live = sum(number_live),
+                     SUM_tolerant = sum(tolerant)) -> sample
 
   # Calculate percent listed
-  sample$percent_tolerant <- (sample$SUM_Tolerant / sample$SUM_NumberLive) * 100
+  sample$percent_tolerant <- (sample$SUM_tolerant / sample$SUM_number_live) * 100
 
   # Convert NaN to zero (numerator and denominator is zero)
   sample$percent_tolerant[is.nan(sample$percent_tolerant)] <- 0

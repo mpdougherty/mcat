@@ -22,19 +22,22 @@ percent_lampsilini <- function(individuals) {
   # Get vector of tribe lampsilini species
   lampsilini <- mcat::lampsilini$lampsilini
 
+  # Create the `number_live` field
+  individuals$number_live <- ifelse(individuals$Status == "Live", 1, 0)
+
   # Set a flag field if the individual is lampsilini and alive
   individuals$lampsilini <- ifelse(individuals$Ename %in% lampsilini &
-                                   individuals$NumberLive >= 1,
+                                   individuals$number_live >= 1,
                                    1, 0)
 
   # Group by SampleID
   individuals %>%
     dplyr::group_by(SampleID) %>%
-    dplyr::summarize(SUM_NumberLive = sum(NumberLive),
-                     SUM_Lampsilini = sum(lampsilini)) -> sample
+    dplyr::summarize(SUM_number_live = sum(number_live),
+                     SUM_lampsilini = sum(lampsilini)) -> sample
 
   # Calculate percent tribe lampsilini
-  sample$percent_lampsilini <- (sample$SUM_Lampsilini / sample$SUM_NumberLive) * 100
+  sample$percent_lampsilini <- (sample$SUM_lampsilini / sample$SUM_number_live) * 100
 
   # Convert NaN to zero (numerator and denominator is zero)
   sample$percent_lampsilini[is.nan(sample$percent_lampsilini)] <- 0

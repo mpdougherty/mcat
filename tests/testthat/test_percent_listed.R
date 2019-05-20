@@ -21,14 +21,14 @@ test_that("Check percent listed for site 201009221423 = 100", {
   expect_equal(pl_201009221423$percent_listed, 100.0, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive and SUM_Listed = 0, percent_listed = 0", {
-  pl_0_0 <- pl[pl$SUM_NumberLive == 0 & pl$SUM_Listed == 0, ]
+test_that("Check when SUM_number_live and SUM_listed = 0, percent_listed = 0", {
+  pl_0_0 <- pl[pl$SUM_number_live == 0 & pl$SUM_listed == 0, ]
   zero_vector <- rep(0, times = length(pl_0_0$percent_listed))
   expect_equal(pl_0_0$percent_listed, zero_vector, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive = 0, percent_listed = 0", {
-  pl_0 <- pl[pl$SUM_NumberLive == 0, ]
+test_that("Check when SUM_number_live = 0, percent_listed = 0", {
+  pl_0 <- pl[pl$SUM_number_live == 0, ]
   zero_vector <- rep(0, times = length(pl_0$percent_listed))
   expect_equal(pl_0$percent_listed, zero_vector, tolerance = 1e-2)
 })

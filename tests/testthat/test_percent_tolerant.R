@@ -21,14 +21,14 @@ test_that("Check percent tolerant for site 201009211406 = 0", {
   expect_equal(pt_201009211406$percent_tolerant, 0.0, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive and SUM_Tolerant = 0, percent_tolerant = 0", {
-  pt_0_0 <- pt[pt$SUM_NumberLive == 0 & pt$SUM_Tolerant == 0, ]
+test_that("Check when SUM_number_live and SUM_tolerant = 0, percent_tolerant = 0", {
+  pt_0_0 <- pt[pt$SUM_number_live == 0 & pt$SUM_tolerant == 0, ]
   zero_vector <- rep(0, times = length(pt_0_0$percent_tolerant))
   expect_equal(pt_0_0$percent_tolerant, zero_vector, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive = 0, percent_tolerant = 0", {
-  pt_0 <- pt[pt$SUM_NumberLive == 0, ]
+test_that("Check when SUM_number_live = 0, percent_tolerant = 0", {
+  pt_0 <- pt[pt$SUM_number_live == 0, ]
   zero_vector <- rep(0, times = length(pt_0$percent_tolerant))
   expect_equal(pt_0$percent_tolerant, zero_vector, tolerance = 1e-2)
 })

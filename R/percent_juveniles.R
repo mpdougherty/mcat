@@ -19,9 +19,12 @@
 #' @importFrom dplyr group_by summarize
 #'
 percent_juveniles <- function(individuals) {
+  # Create the `number_live` field
+  individuals$number_live <- ifelse(individuals$Status == "Live", 1, 0)
+
   # Set a flag field if the individual is juvenile and alive
   individuals$juveniles <- ifelse(individuals$Age <= 5 &
-                                         individuals$NumberLive >= 1,
+                                         individuals$number_live >= 1,
                                   1, 0)
 
   # Check if Age is NA, set juveniles to zero
@@ -30,11 +33,11 @@ percent_juveniles <- function(individuals) {
   # Group by SampleID
   individuals %>%
     dplyr::group_by(SampleID) %>%
-    dplyr::summarize(SUM_NumberLive = sum(NumberLive),
-                     SUM_Juveniles = sum(juveniles)) -> sample
+    dplyr::summarize(SUM_number_live = sum(number_live),
+                     SUM_juveniles = sum(juveniles)) -> sample
 
   # Calculate percent juveniles
-  sample$percent_juveniles <- (sample$SUM_Juveniles / sample$SUM_NumberLive) * 100
+  sample$percent_juveniles <- (sample$SUM_juveniles / sample$SUM_number_live) * 100
 
   # Convert NaN to zero (numerator and denominator is zero)
   sample$percent_juveniles[is.nan(sample$percent_juveniles)] <- 0

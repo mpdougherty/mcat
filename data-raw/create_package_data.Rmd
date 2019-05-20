@@ -20,8 +20,14 @@ Convert the individuals.csv file into a data frame
 individuals <- read.csv("../data-raw/lp10_all_individuals.csv", 
                         stringsAsFactors = FALSE)
 
+fields_to_keep <- c("SampleID", "Ename", "ID_Number", "Peviously_Marked", 
+                    "Marked_mussel", "Status", "Sex", "Gravidity", "Age",  
+                    "Length", "Height", "VoucherLocation", "VoucherType", 
+                    "ZebrasAttached", "Comments", "Northing", "Easting", 
+                    "Method", "NumZebrasAttached1", "PerZebraCoverage1")
+
 # Remove unneeded fields
-individuals <- individuals[, c(2:23)]
+individuals <- individuals[, fields_to_keep]
 
 # Rename fields
 names(individuals)[names(individuals) == "NumZebrasAttached1"] <- "NumZebrasAttached"

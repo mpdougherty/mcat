@@ -26,14 +26,14 @@ test_that("Check that missing Age still results in percent_over_15yrs = 0", {
   expect_equal(po_201009221448$percent_over_15yrs, 0.0, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive and SUM_Over_15yrs = 0, percent_over_15yrs = 0", {
-  po_0_0 <- po[po$SUM_NumberLive == 0 & po$SUM_Over_15yrs == 0, ]
+test_that("Check when SUM_number_live and SUM_over_15yrs = 0, percent_over_15yrs = 0", {
+  po_0_0 <- po[po$SUM_number_live == 0 & po$SUM_over_15yrs == 0, ]
   zero_vector <- rep(0, times = length(po_0_0$percent_over_15yrs))
   expect_equal(po_0_0$percent_over_15yrs, zero_vector, tolerance = 1e-2)
 })
 
-test_that("Check when SUM_NumberLive = 0, percent_over_15yrs = 0", {
-  po_0 <- po[po$SUM_NumberLive == 0, ]
+test_that("Check when SUM_number_live = 0, percent_over_15yrs = 0", {
+  po_0 <- po[po$SUM_number_live == 0, ]
   zero_vector <- rep(0, times = length(po_0$percent_over_15yrs))
   expect_equal(po_0$percent_over_15yrs, zero_vector, tolerance = 1e-2)
 })
