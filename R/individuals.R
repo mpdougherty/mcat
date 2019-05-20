@@ -4,11 +4,27 @@
 #'
 #'@format A data frame with 1212 observations and 29 variables.
 #' \describe{
-#'    \item{OBJECTID}{numeric; The ArcGIS feature class assigned unique
-#'                     identifier for each point in the dataset.}
 #'    \item{SampleID}{}
 #'    \item{Ename}{}
+#'    \item{Previously_Marked}{}
+#'    \item{Marked_mussel}{}
+#'    \item{Status}{}
+#'    \item{Sex}{}
+#'    \item{Gravidity}{}
+#'    \item{Age}{}
+#'    \item{Length}{}
+#'    \item{Height}{}
+#'    \item{Voucher_Location}{}
+#'    \item{Voucher_Type}{}
+#'    \item{ZebrasAttached}{}
+#'    \item{Comments}{}
+#'    \item{Northing}{}
+#'    \item{Easting}{}
+#'    \item{Method}{}
 #'    \item{NumberLive}{}
+#'    \item{NUM5YEAR}{}
+#'    \item{NumZebraAttached}{}
+#'    \item{PerZebraCoverage}{}
 #' }
 #' @source This dataset was downloaded from the \href
 #' {https://rsgisias.crrel.usace.army.mil/intro/mussels_dev.pub.main}

@@ -1,0 +1,18 @@
+#' @docType data
+#'
+#' @title Mussel Tribes
+#'
+#'@format A data frame containing two variables.
+#' \describe{
+#'    \item{species}{A character vector containing mussel Genus and species.}
+#'    \item{tribe}{A character vector containing the tribe of each mussel
+#'                 species.}
+#' }
+#' @source This dataset was taken from Heidi Dunn, Steve Zigler, and Teresa
+#' Newton. 2016. Validation of a Mussel Community Assessment Tool for the
+#' Upper Mississippi River System. 2014 MCA2. Rock Island, IL: U.S. Army
+#' Corps of Engineers, Rock Island District.
+#'
+#' @keywords datasets
+#'
+"tribe"

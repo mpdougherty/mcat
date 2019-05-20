@@ -17,8 +17,15 @@ Data for the tests were taken from the Lower Pool 10 HREP. `\\mvrdfs\egis\Work\E
 
 Convert the individuals.csv file into a data frame
 ```{r}
-individuals <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/lp10_all_individuals.csv", 
+individuals <- read.csv("../data-raw/lp10_all_individuals.csv", 
                         stringsAsFactors = FALSE)
+
+# Remove unneeded fields
+individuals <- individuals[, c(2:23)]
+
+# Rename fields
+names(individuals)[names(individuals) == "NumZebrasAttached1"] <- "NumZebrasAttached"
+names(individuals)[names(individuals) == "PerZebraCoverage1"] <- "PerZebraCoverage"
 ```
 
 Make this data available to the package. 
@@ -39,13 +46,13 @@ Create a `.csv` file for each table and store in the `/data-raw` folder.
 
 Import the required MCAT tables
 ```{r}
-listed <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/listed.csv", 
+listed <- read.csv("../data-raw/listed.csv", 
                    stringsAsFactors = FALSE)
-tolerant <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/tolerant.csv", 
+tolerant <- read.csv("../data-raw/tolerant.csv", 
                      stringsAsFactors = FALSE)
-lampsilini <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/lampsilini.csv", 
+lampsilini <- read.csv("../data-raw/lampsilini.csv", 
                      stringsAsFactors = FALSE)
-tribe <- read.csv("Z:/Work/EMP/HREP_Projects/SteamboatSlough/Mussels/mcat/data-raw/tribe.csv", 
+tribe <- read.csv("../data-raw/tribe.csv", 
                      stringsAsFactors = FALSE)
 ```
 

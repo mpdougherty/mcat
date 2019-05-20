@@ -16,12 +16,11 @@
 #' # Calculate abundance for the individuals data frame
 #' a <- abundance(individuals)
 #'
-#' @importFrom dplyr group_by summarize
+#' @importFrom dplyr group_by summarize %>%
 #'
 abundance <- function(individuals) {
   # Set a flag field if the individual is alive
-  individuals$abund <- ifelse(individuals$NumberLive >= 1,
-                              1, 0)
+  individuals$abund <- ifelse(individuals$NumberLive >= 1, 1, 0)
 
   # Group by SampleID
   individuals %>%
