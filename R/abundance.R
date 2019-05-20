@@ -19,13 +19,16 @@
 #' @importFrom dplyr group_by summarize %>%
 #'
 abundance <- function(individuals) {
+  # Create the `number_live` field
+  individuals$number_live <- ifelse(individuals$Status == "Live", 1, 0)
+
   # Set a flag field if the individual is alive
-  individuals$abund <- ifelse(individuals$NumberLive >= 1, 1, 0)
+  individuals$abund <- ifelse(individuals$number_live >= 1, 1, 0)
 
   # Group by SampleID
   individuals %>%
     dplyr::group_by(SampleID) %>%
-    dplyr::summarize(SUM_NumberLive = sum(NumberLive),
+    dplyr::summarize(SUM_number_live = sum(number_live),
                      abundance = sum(abund)) -> sample
 
   return(sample)
