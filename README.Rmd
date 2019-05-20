@@ -1,5 +1,6 @@
 ---
 output: github_document
+output: html_document
 bibliography: mcat.bib
 ---
 <!-- rmarkdown v1 -->
@@ -23,3 +24,13 @@ This project has been funded by the US Army Corps of Engineers (USACE) [Upper Mi
 ## Authors
 * [Michael Dougherty](mailto:Michael.P.Dougherty@usace.army.mil), Geographer, US Army Corps of Engineers, Rock Island District
 * [Davi Michl](mailto:Davi.E.Michl@usace.army.mil), Biologist, US Army Corps of Engineers, Rock Island District
+
+## Install
+To install the `mcat` package, install from GitHub using the 
+`devtools` package:
+
+```r
+library(devtools)
+install_github(repo = "mpdougherty/mcat")
+```
+## References
