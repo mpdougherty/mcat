@@ -13,7 +13,7 @@
 #' # Create the individual mussel data frame
 #' individuals <- mcat::individuals
 #'
-#' # Calculate species evenness for the individuals data frame
+#' # Calculate tribe evenness for the individuals data frame
 #' te <- tribe_evenness(individuals)
 #'
 #' @importFrom dplyr group_by summarize
