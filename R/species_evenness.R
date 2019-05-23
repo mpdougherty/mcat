@@ -43,16 +43,17 @@ species_evenness <- function(individuals) {
 
   # Use the following equation to calculate Pielou's evenness (See the vegan
   # 'Diversity Vignette' for details).
-  pielou_evenness <- shannon_diversity/log(species_number)
+  species_pielou_evenness <- shannon_diversity/log(species_number)
 
   # Set NaN pielou_evenness values to zero
-  pielou_evenness <- ifelse(is.nan(pielou_evenness), 0, pielou_evenness)
+  species_pielou_evenness <- ifelse(is.nan(species_pielou_evenness),
+                                    0, species_pielou_evenness)
 
   # Create a data frame of results
-  pielou <- data.frame(SampleID = names(pielou_evenness),
+  pielou <- data.frame(SampleID = names(species_pielou_evenness),
                        shannon_diversity,
                        species_number,
-                       pielou_evenness)
+                       species_pielou_evenness)
 
   return(pielou)
 }

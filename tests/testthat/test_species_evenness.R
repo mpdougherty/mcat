@@ -8,22 +8,22 @@ se <- species_evenness(individuals)
 
 test_that("Check pielou_evenness for site 201009211401 = 0", {
   se_201009211401 <- se[se$SampleID == "201009211401", ]
-  expect_equal(se_201009211401$pielou_evenness, 0, tolerance = 1e-2)
+  expect_equal(se_201009211401$species_pielou_evenness, 0, tolerance = 1e-2)
 })
 
 test_that("Check pielou_evenness for site 201009211404 = 0.9463946", {
   se_201009211404 <- se[se$SampleID == "201009211404", ]
-  expect_equal(se_201009211404$pielou_evenness, 0.9463946, tolerance = 1e-2)
+  expect_equal(se_201009211404$species_pielou_evenness, 0.9463946, tolerance = 1e-2)
 })
 
 test_that("Check pielou_evenness for site 201009211408 = 0", {
   se_201009211408 <- se[se$SampleID == "201009211408", ]
-  expect_equal(se_201009211408$pielou_evenness, 0, tolerance = 1e-2)
+  expect_equal(se_201009211408$species_pielou_evenness, 0, tolerance = 1e-2)
 })
 
 test_that("Check pielou_evenness for site 201009221409 = 1", {
   se_201009221409 <- se[se$SampleID == "201009221409", ]
-  expect_equal(se_201009221409$pielou_evenness, 1, tolerance = 1e-2)
+  expect_equal(se_201009221409$species_pielou_evenness, 1, tolerance = 1e-2)
 })
 
 test_that("Check species_number for site 201009211401 = 1", {
