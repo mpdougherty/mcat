@@ -30,3 +30,22 @@ Imports:
 Suggests: 
     testthat
 RoxygenNote: 6.1.1
+Collate: 
+    'Threshold.R'
+    'abundance.R'
+    'individuals.R'
+    'lampsilini.R'
+    'listed.R'
+    'mcat_site_score.R'
+    'percent_fresh_dead.R'
+    'percent_juveniles.R'
+    'percent_lampsilini.R'
+    'percent_listed.R'
+    'percent_over_15yrs.R'
+    'percent_tolerant.R'
+    'pkgname.R'
+    'species_evenness.R'
+    'species_richness.R'
+    'tolerant.R'
+    'tribe.R'
+    'tribe_evenness.R'

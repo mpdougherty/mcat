@@ -13,6 +13,24 @@ metric.
 \section{Slots}{
 
 \describe{
-\item{\code{species_richness}}{}
+\item{\code{percent_listed}}{numeric; Percent of mussels listed}
+
+\item{\code{percent_tolerant}}{numeric; Percent of mussels tolerant}
+
+\item{\code{percent_lampsilini}}{numeric; Percent of mussels lampsilini}
+
+\item{\code{percent_juveniles}}{numeric; Percent of mussels juveniles}
+
+\item{\code{percent_over_15yrs}}{numeric; Percent of mussels over 15 years old}
+
+\item{\code{percent_fresh_dead}}{numeric; Percent of mussels freshly dead}
+
+\item{\code{abundance}}{numeric; Abundance of mussels}
+
+\item{\code{species_evenness}}{numeric; Species evenness of mussels}
+
+\item{\code{tribe_evenness}}{numeric; Tribe evenness of mussels}
+
+\item{\code{species_richness}}{numeric; Species richness of mussels}
 }}
 

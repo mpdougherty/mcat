@@ -5,7 +5,7 @@
 #'
 #' @export
 #' @param individuals    data frame; a data frame of individual mussel records.
-#' @param threshold      a Thresolds object; An object that holds the thresholds
+#' @param threshold      a Thresold object; An object that holds the thresholds
 #'                       for each MCAT metric above which a site is considered
 #'                       to have met the MCAT metric threshold for consideration
 #'                       as a healthy mussel community for that metric.
@@ -20,6 +20,7 @@
 #' # Calculate percent fresh dead for the individuals data frame
 #' mss <- mcat_site_score(individuals)
 #'
+#' @include Threshold.R
 #' @importFrom dplyr group_by summarize
 #'
 mcat_site_score <- function(individuals,
