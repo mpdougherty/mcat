@@ -9,7 +9,7 @@ mcat_site_score(individuals, threshold = default_threshold)
 \arguments{
 \item{individuals}{data frame; a data frame of individual mussel records.}
 
-\item{threshold}{a Thresolds object; An object that holds the thresholds
+\item{threshold}{a Thresold object; An object that holds the thresholds
 for each MCAT metric above which a site is considered
 to have met the MCAT metric threshold for consideration
 as a healthy mussel community for that metric.}
